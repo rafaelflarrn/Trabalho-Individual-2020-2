@@ -1,10 +1,10 @@
-FROM node:alpine
+FROM node:latest
+
+COPY . /app
+
+WORKDIR /app
 
 RUN yarn global add @quasar/cli
 RUN yarn install
-RUN mkdir /home/node/app
-RUN quasar dev
-
-WORKDIR /home/node/app
 
 CMD /bin/sh

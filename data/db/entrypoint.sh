@@ -7,6 +7,3 @@ psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-E
     GRANT ALL PRIVILEGES ON DATABASE myproject TO myuser;
     ALTER USER myuser CREATEDB;
 EOSQL
-python3 manage.py migrate
-python3 manage.py runserver 0.0.0.0:8000
-exec "$@"
